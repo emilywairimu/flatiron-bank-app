@@ -4,7 +4,7 @@ import React from "react";
 import Form from "./components/Form";
 import Header from "./components/Header";
 // import SearchBar from "./components/SearchBar";
-import TableList from "./components/TableList";
+import Transaction from "./components/Transaction";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       {/* <SearchBar /> */}
       <Form />
       {/* <Button /> */}
-      <TableList />
+      <Transaction />
     </div>
   );
 }
