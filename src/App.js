@@ -1,17 +1,19 @@
-//import logo from './logo.svg';
-import './index.css';
-import Form from './components/Form';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import Transaction from './components/Transaction';
+import React from "react";
+
+// import Button from "./components/Button";
+import Form from "./components/Form";
+import Header from "./components/Header";
+// import SearchBar from "./components/SearchBar";
+import TableList from "./components/TableList";
 
 function App() {
   return (
-    <div className="App">
-     <Header />
-     <SearchBar />
-     <Form />
-     <Transaction />
+    <div>
+      <Header />
+      {/* <SearchBar /> */}
+      <Form />
+      {/* <Button /> */}
+      <TableList />
     </div>
   );
 }
