@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import SearchBar from './SearchBar';
 function TransactionList() {
   const [transactions, setTransactions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   useEffect(() => {
-    fetch(' http://localhost:3000/transactions')
+    fetch('http://localhost:3000/transactions')
       .then(response => response.json())
       .then(data => setTransactions(data));
   }, []);
+  const filteredTransactions = transactions.filter((transaction) =>
+    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
   return (
     <div>
+      <SearchBar searchTerm={searchTerm} handleSearch={handleSearch} />
       <table className='table'>
         <thead>
           <tr>
@@ -18,7 +27,7 @@ function TransactionList() {
           </tr>
         </thead>
         <tbody>
-          {transactions.map((transaction) => (
+          {filteredTransactions.map((transaction) => (
             <tr key={transaction.id}>
               <td>{transaction.date}</td>
               <td>{transaction.description}</td>

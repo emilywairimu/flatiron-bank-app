@@ -132,6 +132,13 @@
       "category": "food",
       "amount": "5000",
       "id": 19
+    },
+    {
+      "date": "2023-04-05",
+      "description": "shopping",
+      "category": "food",
+      "amount": "5000",
+      "id": 20
     }
   ]
 }
