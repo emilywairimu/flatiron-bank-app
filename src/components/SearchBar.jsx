@@ -1,24 +1,20 @@
-import React from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+import React from 'react';
 
-function SearchBar(){
-    return(
-        <div>
-            <form>
-                <div className="search-bar-container">
-                    
-                    <input
-                        className="search-bar"
-                        type="text"
-                        placeholder="Search your Transactions"
-                    />
-                    <span className="search-icon">
-                        <AiOutlineSearch size={24} />
-                    </span>
-                </div>
-            </form>
-        </div>
-    )
+function SearchBar(props) {
+  return (
+    <div>
+      <input
+        className="search-bar"
+        type="text"
+        placeholder="Search your Recent Transactions"
+        value={props.searchTerm}
+        onChange={props.handleSearch}
+      />
+      <button className="search-icon" onClick={props.handleSearchClick}>
+        <i className="fa fa-search"></i>
+      </button>
+    </div>
+  );
 }
 
 export default SearchBar;
